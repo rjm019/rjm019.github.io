@@ -9,7 +9,11 @@
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);line-height:1.6}
+body{
+  background:linear-gradient(180deg,#12041f 0%,#09090f 60%) fixed;
+  color:var(--text);
+  line-height:1.6;
+}
 img{max-width:100%;display:block}
 a{color:var(--purple);text-decoration:none}
 
