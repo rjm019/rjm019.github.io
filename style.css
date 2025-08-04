@@ -3,6 +3,7 @@
   --purple:#a855f7;
   --purple-dark:#6b21a8;
   --text:#f1f1f1;
+  --text-w:#ffffff;
   --text-muted:#c5c5c5;
   --card-bg:#15151f;
 }
@@ -53,7 +54,7 @@ section h2{font-size:2rem;margin-bottom:2rem;color:var(--purple)}
 .skills-list{display:flex;flex-wrap:wrap;gap:.7rem;list-style:none}
 .skills-list li{background:var(--purple-dark);padding:.5rem 1rem;border-radius:20px;font-size:.8rem}
 
-#contact p{margin:.4rem 0;color:var(--text)}
+#contact p{margin:.4rem 0;color:var(--text-w)}
 
 footer{text-align:center;padding:3rem 2rem;color:var(--text-muted);font-size:.8rem}
 
