@@ -56,6 +56,8 @@ section h2{font-size:2rem;margin-bottom:2rem;color:var(--purple)}
 
 #contact p{margin:.4rem 0;color:var(--text-w)}
 
+p{color: var(--text-w);}
+
 footer{text-align:center;padding:3rem 2rem;color:var(--text-muted);font-size:.8rem}
 
 .reveal{opacity:0;transform:translateY(40px);transition:1s ease}
