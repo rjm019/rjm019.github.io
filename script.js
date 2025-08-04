@@ -1,4 +1,3 @@
-/* ====== NAVBAR ACTIVE LINK & BURGER ====== */
 const navLinks = document.querySelectorAll('.nav-links li a');
 const sections = [...navLinks].map(a => document.querySelector(a.getAttribute('href')));
 const burger = document.getElementById('burger');
@@ -22,7 +21,6 @@ burger.addEventListener('click', () => {
 });
 navLinks.forEach(l => l.addEventListener('click', () => navUl.classList.remove('show')));
 
-/* ====== CAROUSEL ====== */
 const slides = document.querySelectorAll('.slide');
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
@@ -50,7 +48,6 @@ prevBtn.addEventListener('click', () => { prevSlide(); resetInterval(); });
 dots.forEach(d => d.addEventListener('click', e => { showSlide(+e.target.dataset.index); resetInterval(); }));
 function resetInterval() { clearInterval(interval); interval = setInterval(nextSlide, 7000); }
 
-/* ====== SCROLL REVEAL ====== */
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
 }, { threshold: 0.2 });
