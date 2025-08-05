@@ -200,17 +200,18 @@ a:hover{
 }
 .project-card,
 .skills-list li{
-  background:var(--purple-dark);
+  background:var(--card-bg);
   padding:.5rem 1rem;
   border-radius:20px;
   font-size:.8rem;
-  cursor:default;
+  cursor:pointer;
   transition:transform .25s ease,box-shadow .25s ease,background .25s;
 }
 
 .project-card:hover,
 .skills-list li:hover{
   transform:translateY(-6px) scale(1.04);
+  box-shadow: 0 12px 25px rgba(0,0,0,.4);
   background:var(--purple);       
   animation:pulse 1s ease;
 }
@@ -270,7 +271,6 @@ footer {
 
 .reveal {
   opacity: 0;
-  pointer-events: none;
   transition: opacity .6s ease, transform .6s ease;
 }
 .reveal.visible {
