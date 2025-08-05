@@ -66,26 +66,27 @@ revealEls.forEach(el => io.observe(el));
 
 const translations = {
   en: {
-    title:       "Ricardo Jiménez – Portfolio",
-    "nav-inicio": "Home",
-    "nav-about":  "About",
-    "nav-proj":   "Projects",
+    title: "Ricardo Jiménez – Portfolio",
+    "nav-inicio":"Home",
+    "nav-about":"About",
+    "nav-proj":"Projects",
     "nav-skills":"Skills",
     "nav-contact":"Contact",
-    "about-h2":   "About me",
-    "about-txt":  "I'm Ricardo, a Mexican full-stack developer driven by elegant solutions…",
-    "proj-h2":    "Projects",
-    "skills-h2":  "Skills",
+    "about-h2":"About me",
+    "about-txt":"I'm Ricardo, a Mexican full-stack developer who loves designing, coding, deploying and iterating elegant solutions.",
+    "proj-h2":"Projects",
+    "skills-h2":"Skills",
     "contact-h2":"Contact",
-    "pos-title":  "Dynamic POS",
-    "pos-desc":   "Flexible tabs, QR ordering and full inventory control.",
+    "pos-title":"Dynamic POS",
+    "pos-desc":"Real-time point of sale with flexible tabs, QR ordering and full inventory control (Angular 16 + Laravel 11).",
     "task-title":"Taskly",
-    "task-desc":  "Instant voice-to-reminder Android app.",
+    "task-desc":"Android app (Kotlin + Firebase) that turns voice into smart reminders.",
     "guest-title":"Guest Management",
-    "guest-desc": "Interactive invites and QR passes for your event.",
-    "footer-txt": "© 2025 Ricardo Jiménez — Made with 💜."
+    "guest-desc":"Web suite for events with interactive invites and QR-based access control.",
+    "footer-txt":"© 2025 Ricardo Jiménez — Made with 💜."
   }
 };
+
 
 const langBtn = document.getElementById('langToggle');
 langBtn.addEventListener('click', () => {
