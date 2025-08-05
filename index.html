@@ -1,53 +1,56 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ricardo Jiménez – Portafolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title data-t="title">Ricardo Jiménez – Portafolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav class="navbar" id="navbar">
+  <nav class="navbar">
     <div class="logo">RJ</div>
+
     <ul class="nav-links">
-      <li><a href="#hero">Inicio</a></li>
-      <li><a href="#about">Sobre mí</a></li>
-      <li><a href="#projects">Proyectos</a></li>
-      <li><a href="#skills">Habilidades</a></li>
-      <li><a href="#contact">Contacto</a></li>
+      <li><a href="#hero"     data-t="nav-inicio"   >Inicio</a></li>
+      <li><a href="#about"    data-t="nav-about"    >Sobre mí</a></li>
+      <li><a href="#projects" data-t="nav-proj"     >Proyectos</a></li>
+      <li><a href="#skills"   data-t="nav-skills"   >Habilidades</a></li>
+      <li><a href="#contact"  data-t="nav-contact"  >Contacto</a></li>
     </ul>
-    <div class="burger" id="burger">
-      <span></span><span></span><span></span>
-    </div>
+
+    <button id="langToggle" class="lang-btn" aria-label="Switch language">EN</button>
+    <div class="burger" id="burger"><span></span><span></span><span></span></div>
   </nav>
 
+  <!-- ───────────────────────── HERO / CAROUSEL ─────────────────────────── -->
   <header id="hero">
-    <div class="carousel" id="carousel">
+    <div class="carousel">
       <div class="slide active">
-        <img src="images/pos.jpeg" alt="POS Dinámico" />
+        <img src="images/pos.jpeg" alt="POS Dinámico"/>
         <div class="caption">
-          <h1>POS Dinámico</h1>
-          <p>Cuentas flexibles, QR ordering y control total de inventario.</p>
+          <h1 data-t="pos-title">POS Dinámico</h1>
+          <p  data-t="pos-desc" >Cuentas flexibles, QR ordering y control total de inventario.</p>
         </div>
       </div>
       <div class="slide">
-        <img src="images/taskly.png" alt="Taskly" />
+        <img src="images/taskly.png" alt="Taskly"/>
         <div class="caption">
-          <h1>Taskly</h1>
-          <p>Recordatorios de voz al instante, de facil interacción.</p>
+          <h1 data-t="task-title">Taskly</h1>
+          <p  data-t="task-desc" >Recordatorios de voz al instante, de fácil interacción.</p>
         </div>
       </div>
       <div class="slide">
-        <img src="images/guests.png" alt="Gestión de Invitados" />
+        <img src="images/guests.png" alt="Gestión de Invitados"/>
         <div class="caption">
-          <h1>Gestión de Invitados</h1>
-          <p>Invitaciones interactivas y pases QR para tu evento.</p>
+          <h1 data-t="guest-title">Gestión de Invitados</h1>
+          <p  data-t="guest-desc" >Invitaciones interactivas y pases QR para tu evento.</p>
         </div>
       </div>
       <button class="arrow prev" id="prev">&#10094;</button>
       <button class="arrow next" id="next">&#10095;</button>
-      <div class="dots" id="dots">
+      <div class="dots">
         <span class="dot active" data-index="0"></span>
         <span class="dot" data-index="1"></span>
         <span class="dot" data-index="2"></span>
@@ -55,49 +58,56 @@
     </div>
   </header>
 
+  <!-- ──────────────────────────── ABOUT ────────────────────────────────── -->
   <section id="about" class="reveal">
-    <h2>Sobre mí</h2>
-    <p>Soy Ricardo, desarrollador full-stack mexicano con pasión por crear soluciones elegantes y eficientes. Desde ERPs y POS hasta apps móviles, disfruto cada paso: diseño, código, despliegue y mejora continua.</p>
+    <h2 data-t="about-h2">Sobre mí</h2>
+    <p  data-t="about-txt">Soy Ricardo, desarrollador full-stack mexicano con pasión…</p>
   </section>
 
+  <!-- ─────────────────────────── PROJECTS ──────────────────────────────── -->
   <section id="projects" class="reveal">
-    <h2>Proyectos</h2>
+    <h2 data-t="proj-h2">Proyectos</h2>
+
     <div class="project-grid">
       <article class="project-card">
-        <h3>POS Dinámico</h3>
-        <p>Punto de venta en tiempo real con Angular 16 + Laravel 11. Arrastra y suelta mesas, pagos parciales y panel administrativo.</p>
+        <h3 data-t="pos-title">POS Dinámico</h3>
+        <p  data-t="pos-desc" >Punto de venta en tiempo real con Angular 16 + Laravel 11…</p>
         <a href="https://github.com/rjm019/pos" target="_blank">Código →</a>
       </article>
+
       <article class="project-card">
-        <h3>Taskly</h3>
-        <p>App Android en Kotlin + Firebase para convertir voz en recordatorios inteligentes.</p>
+        <h3 data-t="task-title">Taskly</h3>
+        <p  data-t="task-desc" >App Android en Kotlin + Firebase para convertir voz…</p>
         <a href="https://github.com/rjm019/taskly" target="_blank">Código →</a>
       </article>
+
       <article class="project-card">
-        <h3>Gestión de Invitados</h3>
-        <p>Suite web para eventos con invitaciones interactivas y control de acceso vía QR.</p>
+        <h3 data-t="guest-title">Gestión de Invitados</h3>
+        <p  data-t="guest-desc" >Suite web para eventos con invitaciones interactivas…</p>
         <a href="https://github.com/rjm019/invitaciones" target="_blank">Código →</a>
       </article>
     </div>
   </section>
 
+  <!-- ───────────────────────────── SKILLS ──────────────────────────────── -->
   <section id="skills" class="reveal">
-    <h2>Habilidades</h2>
+    <h2 data-t="skills-h2">Habilidades</h2>
     <ul class="skills-list">
-      <li>PHP / Laravel</li><li>TypeScript</li><li>JavaScript</li><li>Vue 3</li><li>Angular</li><li>Python / Django</li><li>Java / Spring</li><li>Node / Express</li><li>Kotlin</li><li>MySQL</li><li>AWS</li><li>Docker & CI/CD</li>
+      <li>PHP / Laravel</li><li>TypeScript</li><li>JavaScript</li><li>Vue 3</li>
+      <li>Angular</li><li>Python / Django</li><li>Java / Spring</li><li>Node / Express</li>
+      <li>Kotlin</li><li>MySQL</li><li>AWS</li><li>Docker & CI/CD</li>
     </ul>
   </section>
 
+  <!-- ─────────────────────────── CONTACT ──────────────────────────────── -->
   <section id="contact" class="reveal">
-    <h2>Contacto</h2>
+    <h2 data-t="contact-h2">Contacto</h2>
     <p>Email: <a href="mailto:ricardojimenez@micorreo.upp.edu.mx">ricardojimenez@micorreo.upp.edu.mx</a></p>
     <p>WhatsApp: <a href="https://wa.me/525655908318" target="_blank">+52 56 5590 8318</a></p>
-    <p><a href="https://github.com/rjm019" target="_blank">GitHub</a> · <a href="https://www.linkedin.com/in/ricardo-yair-jim%C3%A9nez-mart%C3%ADnez-66424a221?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">LinkedIn</a></p>
+    <p><a href="https://github.com/rjm019" target="_blank">GitHub</a> · <a href="https://www.linkedin.com/in/ricardo-yair-jim%C3%A9nez-mart%C3%ADnez-66424a221" target="_blank">LinkedIn</a></p>
   </section>
 
-  <footer>
-    © 2025 Ricardo Jiménez — Hecho con 💜.
-  </footer>
+  <footer data-t="footer-txt">© 2025 Ricardo Jiménez — Hecho con 💜.</footer>
 
   <script src="script.js"></script>
 </body>
