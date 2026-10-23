@@ -3,105 +3,174 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title data-t="title">Ricardo Jiménez – Portafolio</title>
+  <title data-t="title">Ricardo Jiménez – Desarrollador full-stack</title>
+  <meta name="description" content="Portafolio de Ricardo Jiménez, desarrollador full-stack en Ciudad de México: Laravel, Vue 3, Angular, TypeScript y Docker. Proyectos en producción y código en GitHub." />
+  <meta name="theme-color" content="#09090f" />
+  <link rel="canonical" href="https://rjm019.github.io/" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23a855f7'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='28' fill='%2309090f'%3ERJ%3C/text%3E%3C/svg%3E" />
 
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rjm019.github.io/" />
+  <meta property="og:title" content="Ricardo Jiménez – Desarrollador full-stack" />
+  <meta property="og:description" content="Laravel, Vue 3, Angular y TypeScript. Proyectos en producción y código en GitHub." />
+  <meta property="og:image" content="https://rjm019.github.io/images/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav class="navbar">
-    <div class="logo">RJ</div>
+  <nav class="navbar" aria-label="Principal">
+    <a href="#hero" class="logo" aria-label="Inicio">RJ</a>
 
-    <ul class="nav-links">
+    <ul class="nav-links" id="navLinks">
       <li><a href="#hero"     data-t="nav-inicio">Inicio</a></li>
-      <li><a href="#about"    data-t="nav-about" >Sobre mí</a></li>
       <li><a href="#projects" data-t="nav-proj"  >Proyectos</a></li>
+      <li><a href="#about"    data-t="nav-about" >Sobre mí</a></li>
       <li><a href="#skills"   data-t="nav-skills">Habilidades</a></li>
       <li><a href="#contact"  data-t="nav-contact">Contacto</a></li>
     </ul>
 
-    <button id="langToggle" class="lang-btn" aria-label="Cambiar idioma">
+    <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English">
       <span class="label">EN</span>
-      <svg class="globe" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+      <svg class="globe" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
         <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm7.93 9h-3.02a14.2 14.2 0 00-1.2-5.25A8.03 8.03 0 0119.93 11zm-5.55 0h-5.76A12.41 12.41 0 0112 4.07 12.41 12.41 0 0114.38 11zM4.07 11h3.02A14.2 14.2 0 018.29 5.8 8.03 8.03 0 004.07 11zm3.02 2H4.07a8.03 8.03 0 004.22 5.25A14.2 14.2 0 017.09 13zm5.84 6.93A12.41 12.41 0 018.29 13h5.76a12.41 12.41 0 01-1.12 6.93zM15.71 13h3.22a8.03 8.03 0 01-4.22 5.25 14.2 14.2 0 001-.93z"/>
       </svg>
     </button>
 
-    <div class="burger" id="burger"><span></span><span></span><span></span></div>
+    <button class="burger" id="burger" type="button" aria-label="Abrir menú" aria-controls="navLinks" aria-expanded="false"><span></span><span></span><span></span></button>
   </nav>
 
-¿  <header id="hero">
-    <div class="carousel">
-      <div class="slide active">
-        <img src="images/pos.jpeg" alt="POS Dinámico">
-        <div class="caption">
-          <h1 data-t="pos-title">POS Dinámico</h1>
-          <p  data-t="pos-desc" >Cuentas flexibles, QR ordering y control total de inventario.</p>
-        </div>
+  <header id="hero">
+    <div class="hero-inner">
+      <p class="eyebrow" data-t="hero-eyebrow">Desarrollador full-stack · Ciudad de México</p>
+      <h1>Ricardo Jiménez</h1>
+      <p class="hero-pitch" data-t="hero-pitch">Construyo productos web de punta a punta: desde la base de datos y la API hasta la interfaz y el despliegue en la nube. Mi proyecto más reciente, un motor de invitaciones digitales, ya está en producción.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projects" data-t="hero-cta">Ver proyectos</a>
+        <a class="btn btn-ghost" href="#contact" data-t="hero-contact">Contactar</a>
       </div>
-      <div class="slide">
-        <img src="images/taskly.png" alt="Taskly">
-        <div class="caption">
-          <h1 data-t="task-title">Taskly</h1>
-          <p  data-t="task-desc">Recordatorios de voz al instante, de fácil interacción.</p>
-        </div>
-      </div>
-      <div class="slide">
-        <img src="images/guests.png" alt="Gestión de Invitados">
-        <div class="caption">
-          <h1 data-t="guest-title">Gestión de Invitados</h1>
-          <p  data-t="guest-desc">Invitaciones interactivas y pases QR para tu evento.</p>
-        </div>
-      </div>
-      <button class="arrow prev" id="prev">&#10094;</button>
-      <button class="arrow next" id="next">&#10095;</button>
-      <div class="dots">
-        <span class="dot active" data-index="0"></span>
-        <span class="dot" data-index="1"></span>
-        <span class="dot" data-index="2"></span>
-      </div>
+      <ul class="hero-stack" aria-label="Tecnologías principales">
+        <li>Laravel</li><li>Vue 3</li><li>Angular</li><li>TypeScript</li><li>Docker</li>
+      </ul>
     </div>
   </header>
 
-  <section id="about" class="reveal"><h2 data-t="about-h2">Sobre mí</h2>
-    <p data-t="about-txt">Soy Ricardo, desarrollador full-stack mexicano con pasión por crear soluciones elegantes y eficientes. Desde ERPs y POS hasta apps móviles, disfruto cada paso: diseño, código, despliegue y mejora continua.</p>
-  </section>
+  <section id="projects" class="reveal">
+    <h2 data-t="proj-h2">Proyectos</h2>
 
-  <section id="projects" class="reveal"><h2 data-t="proj-h2">Proyectos</h2>
+    <article class="project featured">
+      <div class="project-media">
+        <img class="shot-wide" src="images/invitaciones-landing.jpg" width="1280" height="800" loading="lazy" alt="Página de inicio de Jiro Invitaciones">
+        <img class="shot-phone" src="images/invitaciones-xv.jpg" width="532" height="600" loading="lazy" alt="Invitación de muestra para XV años vista en un celular">
+      </div>
+      <div class="project-body">
+        <p class="badge" data-t="inv-badge">En producción</p>
+        <h3>Jiro Invitaciones</h3>
+        <p data-t="inv-desc">Motor de invitaciones digitales para bodas, XV años y graduaciones, con confirmación de asistencia y recepción en la puerta del evento.</p>
+        <ul class="highlights">
+          <li data-t="inv-h1">Gestor de plantillas con vista previa al instante, borradores con autoguardado, historial y publicación.</li>
+          <li data-t="inv-h2">Panel del anfitrión que se actualiza en vivo: enlaces por número de invitados, confirmaciones y mesas.</li>
+          <li data-t="inv-h3">Invitación personal con QR integrado al diseño, que lee el buscador de recepción (funciona sin internet).</li>
+          <li data-t="inv-h4">Sin base de datos: el estado vive en archivos CSV con escrituras atómicas, respaldos y bloqueo.</li>
+          <li data-t="inv-h5">Pruebas en PHPUnit y Vitest; todo corre en Docker y se publica en Fly.io.</li>
+        </ul>
+        <ul class="tags">
+          <li>Vue 3</li><li>TypeScript</li><li>Vite</li><li>Laravel 13</li><li>PHP 8.3</li><li>Docker</li><li>Fly.io</li>
+        </ul>
+        <div class="links">
+          <a class="btn btn-primary" href="https://invitaciones-jiro.fly.dev/" target="_blank" rel="noopener" data-t="inv-live">Ver en vivo</a>
+          <a class="btn btn-ghost" href="https://invitaciones-jiro.fly.dev/e/demo-boda" target="_blank" rel="noopener" data-t="inv-demo">Ver una muestra</a>
+          <a class="btn btn-ghost" href="https://github.com/rjm019/invitaciones" target="_blank" rel="noopener" data-t="code">Código</a>
+        </div>
+      </div>
+    </article>
+
     <div class="project-grid">
-      <article class="project-card">
-        <h3 data-t="pos-title">POS Dinámico</h3>
-        <p  data-t="pos-desc" >Punto de venta en tiempo real con Angular 16 + Laravel 11. Arrastra y suelta mesas, pagos parciales y panel administrativo.</p>
-        <a href="https://github.com/rjm019/pos" target="_blank">Código →</a>
+      <article class="project">
+        <div class="project-body">
+          <p class="badge" data-t="pos-badge">Cliente: El Tinacal</p>
+          <h3 data-t="pos-title">Punto de venta para restaurante</h3>
+          <p data-t="pos-desc">Sistema de punto de venta hecho a la medida de un restaurante.</p>
+          <ul class="highlights">
+            <li data-t="pos-h1">Mesas que se unen y se separan, y pedidos que se dividen para pagar por partes.</li>
+            <li data-t="pos-h2">Pedidos por QR, catálogo de productos con disponibilidad y reportes de venta.</li>
+            <li data-t="pos-h3">API con autenticación por tokens y cliente en Angular Material.</li>
+          </ul>
+          <ul class="tags">
+            <li>Angular 18</li><li>Angular Material</li><li>Laravel 11</li><li>Sanctum</li>
+          </ul>
+          <p class="private-note" data-t="private">Código privado (proyecto de cliente)</p>
+        </div>
       </article>
-      <article class="project-card">
-        <h3 data-t="task-title">Taskly</h3>
-        <p  data-t="task-desc" >App Android en Kotlin + Firebase para convertir voz en recordatorios inteligentes.</p>
-        <a href="https://github.com/rjm019/taskly" target="_blank">Código →</a>
-      </article>
-      <article class="project-card">
-        <h3 data-t="guest-title">Gestión de Invitados</h3>
-        <p  data-t="guest-desc" >Suite web para eventos con invitaciones interactivas y control de acceso vía QR.</p>
-        <a href="https://github.com/rjm019/invitaciones" target="_blank">Código →</a>
+
+      <article class="project">
+        <div class="project-body">
+          <p class="badge" data-t="inegi-badge">API REST</p>
+          <h3 data-t="inegi-title">Catálogo de estados del INEGI</h3>
+          <p data-t="inegi-desc">API que sincroniza el catálogo geoestadístico de estados del INEGI y lo sirve con búsqueda y paginación.</p>
+          <ul class="highlights">
+            <li data-t="inegi-h1">Cliente HTTP con reintentos y copia en caché de 7 días por si el servicio del INEGI no responde.</li>
+            <li data-t="inegi-h2">Sincronización dentro de una transacción y limpieza de duplicados.</li>
+            <li data-t="inegi-h3">Documentación OpenAPI con Swagger y una página de consulta con DataTables.</li>
+          </ul>
+          <ul class="tags">
+            <li>Laravel 12</li><li>OpenAPI</li><li>SQLite</li><li>Bootstrap</li>
+          </ul>
+          <div class="links">
+            <a class="btn btn-ghost" href="https://github.com/rjm019/INEGI" target="_blank" rel="noopener" data-t="code">Código</a>
+          </div>
+        </div>
       </article>
     </div>
   </section>
 
-  <section id="skills" class="reveal"><h2 data-t="skills-h2">Habilidades</h2>
-    <ul class="skills-list">
-      <li>PHP / Laravel</li><li>TypeScript</li><li>JavaScript</li><li>Vue 3</li>
-      <li>Angular</li><li>Python / Django</li><li>Java / Spring</li><li>Node / Express</li>
-      <li>Kotlin</li><li>MySQL</li><li>AWS</li><li>Docker & CI/CD</li>
+  <section id="about" class="reveal">
+    <h2 data-t="about-h2">Sobre mí</h2>
+    <p data-t="about-txt">Soy Ricardo, desarrollador mexicano y programo desde los 17 años. He construido ERPs, puntos de venta, apps móviles y despliegues en la nube, y he trabajado como PM, DevOps y líder de equipo, aunque lo que más disfruto sigue siendo escribir código. Me gusta llevar un producto completo: entender el negocio, diseñarlo, programarlo, probarlo y ponerlo en producción.</p>
+  </section>
+
+  <section id="skills" class="reveal">
+    <h2 data-t="skills-h2">Habilidades</h2>
+    <div class="skills-groups">
+      <div>
+        <h3>Back-end</h3>
+        <ul class="skills-list">
+          <li>PHP / Laravel</li><li>Python / Django</li><li>Java / Spring</li><li>Node / Express</li><li>APIs REST</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Front-end / Mobile</h3>
+        <ul class="skills-list">
+          <li>Vue 3</li><li>Angular</li><li>TypeScript</li><li>JavaScript</li><li>Kotlin</li>
+        </ul>
+      </div>
+      <div>
+        <h3 data-t="skills-ops">DevOps y datos</h3>
+        <ul class="skills-list">
+          <li>Docker</li><li>CI/CD</li><li>AWS</li><li>Fly.io</li><li>MySQL</li><li>Git</li><li>Linux</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="reveal">
+    <h2 data-t="contact-h2">Contacto</h2>
+    <p class="contact-intro" data-t="contact-intro">¿Tienes un proyecto o una vacante? Escríbeme.</p>
+    <ul class="contact-list">
+      <li><span data-t="contact-email">Correo</span> <a href="mailto:ricardojimenez@micorreo.upp.edu.mx">ricardojimenez@micorreo.upp.edu.mx</a></li>
+      <li><span>WhatsApp</span> <a href="https://wa.me/525655908318" target="_blank" rel="noopener">+52 56 5590 8318</a></li>
+      <li><span>GitHub</span> <a href="https://github.com/rjm019" target="_blank" rel="noopener">github.com/rjm019</a></li>
+      <li><span>LinkedIn</span> <a href="https://www.linkedin.com/in/ricardo-yair-jim%C3%A9nez-mart%C3%ADnez-66424a221" target="_blank" rel="noopener">Ricardo Yair Jiménez Martínez</a></li>
     </ul>
   </section>
 
-  <section id="contact" class="reveal"><h2 data-t="contact-h2">Contacto</h2>
-    <p>Email: <a href="mailto:ricardojimenez@micorreo.upp.edu.mx">ricardojimenez@micorreo.upp.edu.mx</a></p>
-    <p>WhatsApp: <a href="https://wa.me/525655908318" target="_blank">+52 56 5590 8318</a></p>
-    <p><a href="https://github.com/rjm019" target="_blank">GitHub</a> · <a href="https://www.linkedin.com/in/ricardo-yair-jim%C3%A9nez-mart%C3%ADnez-66424a221" target="_blank">LinkedIn</a></p>
-  </section>
-
-  <footer data-t="footer-txt">© 2025 Ricardo Jiménez — Hecho con 💜.</footer>
+  <footer>© <span id="year">2026</span> Ricardo Jiménez</footer>
   <script src="script.js"></script>
 </body>
 </html>

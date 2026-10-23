@@ -12,88 +12,87 @@ function highlight() {
     }
   });
 }
-window.addEventListener('scroll', highlight);
+window.addEventListener('scroll', highlight, { passive: true });
 highlight();
 
-burger.addEventListener('click', () => {
-  navUl.classList.toggle('show');
-  burger.classList.toggle('open');
-});
-navLinks.forEach(l => l.addEventListener('click', () => navUl.classList.remove('show')));
-
-const slides = document.querySelectorAll('.slide');
-const dots   = document.querySelectorAll('.dot');
-const prev   = document.getElementById('prev');
-const next   = document.getElementById('next');
-let idx = 0, timer = setInterval(nextSlide, 7000);
-
-function showSlide(i) {
-  slides.forEach(s => s.classList.remove('active'));
-  dots.forEach(d => d.classList.remove('active'));
-  slides[i].classList.add('active');
-  dots[i].classList.add('active');
-  idx = i;
+function setMenu(open) {
+  navUl.classList.toggle('show', open);
+  burger.classList.toggle('open', open);
+  burger.setAttribute('aria-expanded', String(open));
 }
-
-function nextSlide() { showSlide((idx + 1) % slides.length); }
-function prevSlide() { showSlide((idx - 1 + slides.length) % slides.length); }
-
-next.addEventListener('click', () => { nextSlide(); resetTimer(); });
-prev.addEventListener('click', () => { prevSlide(); resetTimer(); });
-dots.forEach(d => d.addEventListener('click', e => {
-  showSlide(+e.target.dataset.index);
-  resetTimer();
-}));
-
-function resetTimer() {
-  clearInterval(timer);
-  timer = setInterval(nextSlide, 7000);
-}
+burger.addEventListener('click', () => setMenu(!navUl.classList.contains('show')));
+navLinks.forEach(l => l.addEventListener('click', () => setMenu(false)));
 
 const revealEls = document.querySelectorAll('.reveal');
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(ent => {
-    if (ent.isIntersecting) {
-      ent.target.classList.add('visible');
-      ent.target.classList.toggle('up', window.scrollY > ent.target.offsetTop);
-    } else {
-      ent.target.classList.remove('visible', 'up');
-    }
-  });
-}, { threshold: 0.25 });
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+  revealEls.forEach(el => el.classList.add('visible'));
+} else {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(ent => {
+      if (ent.isIntersecting) {
+        ent.target.classList.add('visible');
+        io.unobserve(ent.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => io.observe(el));
+}
 
-revealEls.forEach(el => io.observe(el));
+document.getElementById('year').textContent = new Date().getFullYear();
 
 const translations = {
   en: {
-    title: "Ricardo Jiménez – Portfolio",
-    "nav-inicio":"Home",
-    "nav-about":"About",
-    "nav-proj":"Projects",
-    "nav-skills":"Skills",
-    "nav-contact":"Contact",
-    "about-h2":"About me",
-    "about-txt":"I'm Ricardo, a Mexican full-stack developer who loves designing, coding, deploying and iterating elegant solutions.",
-    "proj-h2":"Projects",
-    "skills-h2":"Skills",
-    "contact-h2":"Contact",
-    "pos-title":"Dynamic POS",
-    "pos-desc":"Real-time point of sale with flexible tabs, QR ordering and full inventory control (Angular 16 + Laravel 11).",
-    "task-title":"Taskly",
-    "task-desc":"Android app (Kotlin + Firebase) that turns voice into smart reminders.",
-    "guest-title":"Guest Management",
-    "guest-desc":"Web suite for events with interactive invites and QR-based access control.",
-    "footer-txt":"© 2025 Ricardo Jiménez — Made with 💜."
+    title: "Ricardo Jiménez – Full-stack developer",
+    "nav-inicio": "Home",
+    "nav-about": "About",
+    "nav-proj": "Projects",
+    "nav-skills": "Skills",
+    "nav-contact": "Contact",
+    "hero-eyebrow": "Full-stack developer · Mexico City",
+    "hero-pitch": "I build web products end to end: from the database and the API to the interface and cloud deployment. My latest project, a digital invitation engine, is already live in production.",
+    "hero-cta": "See projects",
+    "hero-contact": "Get in touch",
+    "proj-h2": "Projects",
+    "inv-badge": "In production",
+    "inv-desc": "Digital invitation engine for weddings, quinceañeras and graduations, with RSVP and guest check-in at the door.",
+    "inv-h1": "Template manager with instant preview, autosaved drafts, history and publishing.",
+    "inv-h2": "Live host dashboard: links by party size, confirmations and table assignments.",
+    "inv-h3": "Personal invitation with a QR code woven into the design, read by the offline check-in app.",
+    "inv-h4": "No database: state lives in CSV files with atomic writes, backups and file locks.",
+    "inv-h5": "Tested with PHPUnit and Vitest; everything runs in Docker and ships to Fly.io.",
+    "inv-live": "Live site",
+    "inv-demo": "See a sample",
+    "code": "Code",
+    "pos-badge": "Client: El Tinacal",
+    "pos-title": "Restaurant point of sale",
+    "pos-desc": "Point of sale system built for a restaurant.",
+    "pos-h1": "Tables that merge and split, and orders that can be divided to pay in parts.",
+    "pos-h2": "QR ordering, product catalog with availability and sales reports.",
+    "pos-h3": "Token-authenticated API and an Angular Material client.",
+    "private": "Private code (client project)",
+    "inegi-badge": "REST API",
+    "inegi-title": "INEGI states catalog",
+    "inegi-desc": "API that syncs the INEGI geostatistical catalog of Mexican states and serves it with search and pagination.",
+    "inegi-h1": "HTTP client with retries and a 7-day cached copy in case INEGI's service is down.",
+    "inegi-h2": "Sync inside a database transaction plus duplicate cleanup.",
+    "inegi-h3": "OpenAPI docs with Swagger and a lookup page built with DataTables.",
+    "about-h2": "About me",
+    "about-txt": "I'm Ricardo, a Mexican developer who has been coding since 17. I've built ERPs, points of sale, mobile apps and cloud deployments, and I've worked as PM, DevOps and team lead, though writing code is still what I enjoy most. I like owning a product end to end: understanding the business, designing it, coding it, testing it and shipping it.",
+    "skills-h2": "Skills",
+    "skills-ops": "DevOps & data",
+    "contact-h2": "Contact",
+    "contact-intro": "Have a project or an opening? Drop me a line.",
+    "contact-email": "Email"
   }
 };
 
-
 const langBtn = document.getElementById('langToggle');
 langBtn.addEventListener('click', () => {
-  const cur = document.documentElement.dataset.lang;
-  const next = cur === 'es' ? 'en' : 'es';
+  const next = document.documentElement.dataset.lang === 'es' ? 'en' : 'es';
   document.documentElement.dataset.lang = next;
+  document.documentElement.lang = next;
   langBtn.querySelector('.label').textContent = next === 'es' ? 'EN' : 'ES';
+  langBtn.setAttribute('aria-label', next === 'es' ? 'Switch to English' : 'Cambiar a español');
   applyLang(next);
 });
 
